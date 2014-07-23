@@ -6,6 +6,7 @@ from collections import OrderedDict
 from flask.ext.sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test.db'
 db = SQLAlchemy(app)
 
 ALLOWED_EXTENSIONS = set(['doc', 'docx', 'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
