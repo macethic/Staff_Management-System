@@ -12,6 +12,14 @@ class Staff(db.Model):
     Staff_Phone = db.Column(db.Integer, unique=True)
     Staff_Address = db.Column(db.Text)
     Staff_Photo = db.Column(db.Text)
+    
+    def __init__(self, Staff_Name, Staff_ID, Staff_Email, Staff_Phone, Staff_Address, Staff_Photo):
+	    self.Staff_Name = Staff_Name
+	    self.Staff_ID = Staff_ID
+	    self.Staff_Email = Staff_Email
+	    self.Staff_Phone = Staff_Phone
+	    self.Staff_Address = Staff_Address
+	    self.Staff_Photo = Staff_Photo
 
 
 class Education(db.Model):
@@ -164,8 +172,6 @@ class Others(db.Model):
 
     Others = db.Column(db.Text)
 
-
-db.create_all()
 
 
 
