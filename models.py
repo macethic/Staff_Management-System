@@ -14,12 +14,12 @@ class Staff(db.Model):
     Staff_Photo = db.Column(db.Text)
     
     def __init__(self, Staff_Name, Staff_ID, Staff_Email, Staff_Phone, Staff_Address, Staff_Photo):
-	    self.Staff_Name = Staff_Name
-	    self.Staff_ID = Staff_ID
-	    self.Staff_Email = Staff_Email
-	    self.Staff_Phone = Staff_Phone
-	    self.Staff_Address = Staff_Address
-	    self.Staff_Photo = Staff_Photo
+        self.Staff_Name = Staff_Name
+	self.Staff_ID = Staff_ID
+	self.Staff_Email = Staff_Email
+	self.Staff_Phone = Staff_Phone
+	self.Staff_Address = Staff_Address
+	self.Staff_Photo = Staff_Photo
 
 
 class Education(db.Model):
@@ -43,6 +43,24 @@ class Education(db.Model):
     PHD_Ins_Year = db.Column(db.Integer, nullable=True)
     PHD_Attach = db.Column(db.Text, nullable=True)
 
+    def __init__(self, UG_Ins_Name, UG_Ins_Special, UG_Ins_Year, UG_Attach, PG_Ins_Name, PG_Ins_Special, PG_Ins_Year,\
+	    PG_Attach, PHD_Ins_Name, PHD_Ins_Special, PHD_Ins_Year, PHD_Attach):
+
+	self.UG_Ins_Name = UG_Ins_Name
+	self.UG_Ins_Special = UG_Ins_Special
+	self.UG_Ins_Year = UG_Ins_Year
+	self.UG_Attach = UG_Attach
+
+	self.PG_Ins_Name = PG_Ins_Name
+	self.PG_Ins_Special = PG_Ins_Special
+	self.PG_Ins_Year = PG_Ins_Year
+	self.PG_Attach = PG_Attach
+
+	self.PHD_Ins_Name = PHD_Ins_Name
+	self.PHD_Ins_Special = PHD_Ins_Special
+	self.PHD_Ins_Year = PHD_Ins_Year
+	self.PHD_Attach = PHD_Attach
+
 
 class Activities(db.Model):
     __tablename__ = 'Activities'
@@ -53,6 +71,12 @@ class Activities(db.Model):
     Workshops = db.Column(db.Text)
     Seminars = db.Column(db.Text)
     EDP = db.Column(db.Text, nullable=True)
+
+    def __init__(self, Workshops, Seminars, EDP):
+        
+        self.Workshops = Workshops
+	self.Seminars = Seminars
+	self.EDP = EDP
 
 
 class Experience(db.Model):
@@ -86,6 +110,38 @@ class Experience(db.Model):
     TeachingExp_FYear4 = db.Column(db.Integer, nullable=True)
     TeachingExp_TYear4 = db.Column(db.Integer, nullable=True)
 
+    def __init__(self, TeachingExp_Name, TeachingExp_Desig, TeachingExp_FYear, TeachingExp_TYear,\
+		    TeachingExp_Name1, TeachingExp_Desig1, TeachingExp_FYear1, TeachingExp_TYear1,\
+		    TeachingExp_Name2, TeachingExp_Desig2, TeachingExp_FYear2, TeachingExp_TYear2,\
+		    TeachingExp_Name3, TeachingExp_Desig3, TeachingExp_FYear3, TeachingExp_TYear3,\
+		    TeachingExp_Name4, TeachingExp_Desig4, TeachingExp_FYear4, TeachingExp_TYear4):
+    
+	self.TeachingExp_Name = TeachingExp_Name
+	self.TeachingExp_Desig = TeachingExp_Desig
+	self.TeachingExp_FYear = TeachingExp_FYear
+	self.TeachingExp_TYear = TeachingExp_TYear
+
+	self.TeachingExp_Name1 = TeachingExp_Name1
+	self.TeachingExp_Desig1 = TeachingExp_Desig1
+	self.TeachingExp_FYear1 = TeachingExp_FYear1
+	self.TeachingExp_TYear1 = TeachingExp_TYear1
+
+	self.TeachingExp_Name2 = TeachingExp_Name2
+	self.TeachingExp_Desig2 = TeachingExp_Desig2
+	self.TeachingExp_FYear2 = TeachingExp_FYear2
+	self.TeachingExp_TYear2 = TeachingExp_TYear2
+
+        self.TeachingExp_Name3 = TeachingExp_Name3
+	self.TeachingExp_Desig3 = TeachingExp_Desig3
+	self.TeachingExp_FYear3 = TeachingExp_FYear3
+	self.TeachingExp_TYear3 = TeachingExp_TYear3
+
+        self.TeachingExp_Name4 = TeachingExp_Name4
+	self.TeachingExp_Desig4 = TeachingExp_Desig4
+	self.TeachingExp_FYear4 = TeachingExp_FYear4
+	self.TeachingExp_TYear4 = TeachingExp_TYear4
+
+
 
 class Publications(db.Model):
     __tablename__ = 'Publications'
@@ -112,6 +168,32 @@ class Publications(db.Model):
     Pub_Title4 = db.Column(db.String(500), nullable=True)
     Pub_Year4 = db.Column(db.Integer, index=True, nullable=True)
     Pub_Attach4 = db.Column(db.Text, nullable=True)
+
+    def __init__(self, Pub_Title, Pub_Year, Pub_Attach,\
+		    Pub_Title1, Pub_Year1, Pub_Attach1,\
+		    Pub_Title2, Pub_Year2, Pub_Attach2, 
+		    Pub_Title3, Pub_Year3, Pub_Attach3,\
+		    Pub_Title4, Pub_Year4, Pub_Attach4):
+        
+	self.Pub_Title = Pub_Title
+	self.Pub_Year = Pub_Year
+	self.Pub_Attach = Pub_Attach
+
+ 	self.Pub_Title1 = Pub_Title1
+	self.Pub_Year1 = Pub_Year1
+	self.Pub_Attach1 = Pub_Attach1
+
+	self.Pub_Title2 = Pub_Title2
+	self.Pub_Year2 = Pub_Year2
+	self.Pub_Attach2 = Pub_Attach2
+
+	self.Pub_Title3 = Pub_Title3
+	self.Pub_Year3 = Pub_Year3
+	self.Pub_Attach3 = Pub_Attach3
+
+	self.Pub_Title4 = Pub_Title4
+	self.Pub_Year4 = Pub_Year4
+	self.Pub_Attach4 = Pub_Attach4
 
 
 class GuestLecture(db.Model):
@@ -140,6 +222,32 @@ class GuestLecture(db.Model):
     GLec_Topic4 = db.Column(db.String(500), nullable=True)
     GLec_Year4 = db.Column(db.Integer, index=True, nullable=True)
 
+    def __init__(self, GLec_Name, GLec_Topic, GLec_Year,\
+		    GLec_Name1, GLec_Topic1, GLec_Year1,\
+		    GLec_Name2, GLec_Topic2, GLec_Year2,\
+		    GLec_Name3, GLec_Topic3, GLec_Year3,\
+		    GLec_Name4, GLec_Topic4, GLec_Year4):
+        
+	self.GLec_Name = GLec_Name
+	self.GLec_Topic = GLec_Topic
+	self.GLec_Year = GLec_Year
+	
+	self.GLec_Name1 = GLec_Name1
+	self.GLec_Topic1 = GLec_Topic1
+	self.GLec_Year1 = GLec_Year1
+      
+        self.GLec_Name2 = GLec_Name2
+	self.GLec_Topic2 = GLec_Topic2
+	self.GLec_Year2 = GLec_Year2
+
+	self.GLec_Name3 = GLec_Name3
+	self.GLec_Topic3 = GLec_Topic3
+	self.GLec_Year3 = GLec_Year3
+	
+	self.GLec_Name4 = GLec_Name4
+	self.GLec_Topic4 = GLec_Topic4
+	self.GLec_Year4 = GLec_Year4
+
 
 class Re_bodies_awards(db.Model):
     __tablename__ = 'Re_bodies_awards'
@@ -151,6 +259,11 @@ class Re_bodies_awards(db.Model):
     ProfBodies = db.Column(db.Text)
     Awards = db.Column(db.Text)
     
+    def __init__(self, Research, ProfBodies, Awards):
+        
+	self.Research = Research
+	self.ProfBodies = ProfBodies
+	self.Awards = Awards
 
 class BookPublications(db.Model):
     __tablename__ = 'BookPublications'
@@ -163,6 +276,12 @@ class BookPublications(db.Model):
     Book_ISBN = db.Column(db.String(500))
     Book_Year = db.Column(db.Integer, index=True)
 
+    def __init__(self, Book_Name, Book_Pub, Book_ISBN, Book_Year):
+        
+	self.Book_Name = Book_Name
+	self.Book_Pub = Book_Pub
+	self.Book_ISBN = Book_ISBN
+	self.Book_Year = Book_Year
 
 class Others(db.Model):
     __tablename__ = 'Others'
@@ -172,7 +291,9 @@ class Others(db.Model):
 
     Others = db.Column(db.Text)
 
-
+    def __init__(self,Others):
+	
+	self.Others = Others
 
 
 

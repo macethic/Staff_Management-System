@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Staffs details enroll form</title>
+
+<link href="static/contact.css" rel="stylesheet" type="text/css" /> <!-- AJAX Contact Form Stylesheet -->
+
+</head>
+<body>
+
+	<section id="contact">
+
+		<header>
+
+		<h1>Staff Table</h1>
+		<p>Click on each entry to view more</p>
+		
+		</header>
+
+		<mark id="message"></mark>
+
+
+			<fieldset>
+
+				<legend>Name list</legend>
+
+				<div>
+					{% for attr in staff %}
+					<p><a href="#">{{attr.Staff_Name}}</a></p>
+	        {% endfor %}		    
+		
+				</div>
+
+                                       
+	</section>
+
+</body>
+</html>

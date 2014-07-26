@@ -6,9 +6,10 @@ from collections import OrderedDict
 from flask.ext.sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
-app.config.from_object(os.environ['APP_SETTINGS'])
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test.db'
 db = SQLAlchemy(app)
 
+#db.create_all()
 from models import *
 
 
@@ -41,14 +42,22 @@ def upload():
     			fileurl.append(app.config['UPLOAD_FOLDER'] + filename)
 	
 	#print data
-	for k in request.form:
-		print k + ":" + request.form[k]
+	#for k in request.form:
+	#	print k + ":" + request.form[k]
 		
-	print fileurl
-	print request.form
+	#print fileurl[0]
+	#print request.form['Staff_Name']
 	
-
-	return render_template('details.html')
+	s = Staff(request.form['Staff_Name'], request.form['Staff_ID'], request.form['Staff_Email'], request.form['Staff_Phone'],request.form['Staff_Address'], fileurl[0])	
+	
+	db.session.add(s)
+	db.session.commit()
+	staff = Staff.query.all()
+	
+	#for i in staff:
+	#	print i.Staff_Name
+	
+	return render_template('stafflist.html')
 
 if __name__ == '__main__':
 	app.run(
