@@ -6,6 +6,7 @@
 
 <link href="static/contact.css" rel="stylesheet" type="text/css" /> <!-- AJAX Contact Form Stylesheet -->
 
+
 </head>
 <body>
 
@@ -27,7 +28,7 @@
 
 				<div>
 					{% for attr in staff %}
-					<p><a href="#">{{attr.Staff_Name}}</a></p>
+					<p><a href=/staffs/{{attr.Staff_Name}}>{{attr.Staff_Name}}</a></p>
 	        {% endfor %}		    
 		
 				</div>

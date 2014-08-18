@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title>Profile of Mr. {{staffname}}</title>
+
+<link href="/static/contact.css" rel="stylesheet" type="text/css" /> <!-- AJAX Contact Form Stylesheet -->
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+
+
+</head>
+<body>
+
+	<section id="contact">
+
+		<header>
+
+		<h1>Profile of Mr. {{staffname}}</h1>
+		
+		</header>
+
+		<mark id="message"></mark>
+
+
+			<fieldset>
+
+				<legend>Details</legend>
+                                <div class="media">
+                                      <a class="pull-right" href="#">
+                                          <img class="media-object" src="" width="200" height="85">
+                                                </a>
+                                                  
+                                <div>
+                                        <h2> Personal Details </h2>
+                                        <p>Name: {{staff.Staff_Name}}</p>
+				        <p>ID: {{staff.Staff_ID}}</p>
+					<p>E-mail: {{staff.Staff_Email}}</p>
+					<p>Phone: {{staff.Staff_Phone}}</p>
+					<p>Address : {{staff.Staff_Address}}</p>
+                                            
+				        {% for edu in education %}
+                                        <h2> Educational Qualifications </h2>
+                                        <h4>UG</h4>
+                                        <p>Name of institution: {{edu.UG_Ins_Name }} </p>
+                                        <p>Branch: {{edu.UG_Ins_Special}} </p>	
+                                        <p>Year of passing: {{edu.UG_Ins_Year}} </p>
+
+					<h4>PG</h4>
+                                        <p>Name of institution: {{edu.PG_Ins_Name }} </p>
+                                        <p>Branch: {{edu.PG_Ins_Special}} </p>	
+                                        <p>Year of passing: {{edu.PG_Ins_Year}} </p>
+
+                                        <h4>PHD</h4>
+                                        <p>Name of institution: {{edu.PHD_Ins_Name }} </p>
+                                        <p>Branch: {{edu.PHD_Ins_Special}} </p>	
+                                        <p>Year of passing: {{edu.PHD_Ins_Year}} </p>
+
+                                        
+					
+					{% endfor %}		    
+                                        {% for act in activities %}
+                                        <h4>Workshops</h4> <p>{{act.Workshops}} </p>
+		
+					{% endfor %}		    
+				</div>
+
+                                       
+	</section>
+
+</body>
+</html>

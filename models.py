@@ -21,7 +21,6 @@ class Staff(db.Model):
 	self.Staff_Address = Staff_Address
 	self.Staff_Photo = Staff_Photo
 
-
 class Education(db.Model):
     __tablename__ = 'Education'
     
